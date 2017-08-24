@@ -1,0 +1,14 @@
+create_user_lacoski:
+  user.present:
+    - name: lacoski
+    - password: $1$pvaECagD$N9W67.ihtTPsrazryFYMt.
+
+create_user_thanh1:
+  user.present:
+    - name: thanh1
+    - password: $1$pvaECagD$N9W67.ihtTPsrazryFYMt.
+
+create_user_thanh2:
+  user.present:
+    - name: thanh2
+    - password: $1$pvaECagD$N9W67.ihtTPsrazryFYMt.

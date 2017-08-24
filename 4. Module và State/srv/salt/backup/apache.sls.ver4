@@ -1,0 +1,26 @@
+install_apache:
+ pkg.installed:
+ - name: httpd
+
+make sure apache is running:
+ service.running:
+ - name: httpd
+ - enable: True
+ - require: 
+   - pkg: install_apache
+
+sync mod_status.conf:
+ file.managed:
+ - name: /tmp/apache2/mods-enabled/mod_status.conf
+ - source: salt://mod_status.conf
+ - user: root
+ - group: root
+ - mode: 600
+
+sync mod_status.load:
+ file.managed:
+ - name: /tmp/apache2/mods-enabled/mod_status.load
+ - source: salt://mod_status.load
+ - user: root
+ - group: root
+ - mode: 600
